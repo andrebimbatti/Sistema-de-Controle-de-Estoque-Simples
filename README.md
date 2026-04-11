@@ -23,13 +23,13 @@ Um sistema simples de controle de mercadorias feito em **Python** utilizando **S
 
 ## 📂 Estrutura do Projeto
 
+```
 📁 projeto/
 │
-├── main.py # Arquivo principal que inicia o sistema
-├── db.py # Funções de banco de dados e lógica do sistema
-├── estoque.db # Banco de dados SQLite (gerado automaticamente)
-
-
+├── main.py        # Arquivo principal que inicia o sistema
+├── db.py          # Funções de banco de dados e lógica do sistema
+├── estoque.db     # Banco de dados SQLite (gerado automaticamente)
+```
 ---
 
 ## ▶️ Como Executar
