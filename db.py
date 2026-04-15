@@ -67,7 +67,7 @@ def cadastrar():
     conn.commit()
     conn.close()
 
-def entrada(id):
+def entrada_de_produtos(id):
     conn = conectar()
     cursor = conn.cursor()
     cursor.execute("SELECT quantidade FROM produtos WHERE id = ?", (id,))
@@ -100,7 +100,6 @@ def entrada(id):
     conn.close()
     print("✅ Nova quantidade atualizada com sucesso!")
     input("Pressione Enter para continuar")
-    menu()
 
 def saida(id):
     conn = conectar()
@@ -135,7 +134,6 @@ def saida(id):
     conn.close()
     print("✅ Nova quantidade atualizada com sucesso!")
     input("Pressione Enter para continuar")
-    menu()
 
 def exibir_estoque():
     conn = conectar()
@@ -163,7 +161,8 @@ def deletar_produto(id):
         """, (id,)
     )
     print(f'Produto do id {id} foi deletado com sucesso.')
-    menu()
+    conn.commit()
+    conn.close()
 
 def menu():
     while True:
@@ -193,7 +192,7 @@ def menu():
                 if entrada == '':
                     continue
                 id = int(entrada)
-                entrada(id)
+                entrada_de_produtos(id)
             case 3:
                 limpar()
                 titulo('SAIDA DE PRODUTOS')
@@ -202,6 +201,7 @@ def menu():
                 if entrada == '':
                     continue
                 id = int(entrada)
+                
                 saida(id)
             case 4:
                 limpar()
